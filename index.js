@@ -10,7 +10,6 @@ window.addEventListener("load",function() {
   const AVG_SURFACE = 10000; // pixels²
   const RADIUS = 2;
   const COLOR_POS = '#ff0000';
-  const COLOR_NEG = '#0000ff';
   const PART_MIN = 10; // min number of particles starting from each positive source
   const PART_MAX = 50; // max number of particles starting from each positive source
   const SPEED_ANIM = 1;
@@ -20,8 +19,8 @@ window.addEventListener("load",function() {
 
   let maxx, maxy;   // canvas dimensions
 
-  let nbPos, nbNeg;
-  let arrPos, arrNeg;
+  let nbPos;
+  let arrPos;
   let particles;
   let nbPart;
 
@@ -151,15 +150,6 @@ Particle.prototype.move = function(x, y) {
     fy += dy / dist / msqrt(dist);
   }
 
-// negative charges
-  for (let k = 0; k < nbNeg; ++k) {
-    dx = arrNeg[k][0] - x0;
-    dy = arrNeg[k][1] - y0;
-    dist = dx * dx + dy * dy;
-    if (dist < RADIUS * RADIUS) finished = true;
-    fx += dx / dist / msqrt(dist);
-    fy += dy / dist / msqrt(dist);
-  }
   dist = mhypot(fx, fy);
   this.x += SPEED_PART * fx / dist;
   this.y += SPEED_PART * fy / dist;
@@ -184,16 +174,14 @@ function createField() {
   let offsAng, nbPart, part;
   let color;
 
-  nbPos = nbNeg = mround(maxx * maxy / AVG_SURFACE );
-  nbPart = intAlea(PART_MIN, PART_MAX + 1); // particles starting from this source
+  nbPos = 10; // количество точек
+  nbPart = 15; // интенсивность линий
   arrPos = [];
   for (let k = 0; k < nbPos; ++k) {
-    arrPos[k] = [maxx/2, maxy/2 + k*5 - 100];
+    arrPos[k] = [maxx/2, maxy/2 + k*30 - 100];
   } // for k
 
-  arrNeg = arrPos.splice(mround(nbPos / 2));
   nbPos = arrPos.length;
-  nbNeg = arrNeg.length;
 
 // create particles
 
