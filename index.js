@@ -81,7 +81,6 @@ function intAlea (mini, maxi) {
 let animate;
 
 { // scope for animate
-
 let animState = 0;
 let currCell;
 
@@ -174,8 +173,8 @@ function createField() {
   let offsAng, nbPart, part;
   let color;
 
-  nbPos = 10; // количество точек
-  nbPart = 15; // интенсивность линий
+  nbPos = document.getElementById("Radius").value; // количество точек
+  nbPart = document.getElementById("Ro").value; // интенсивность линий
   arrPos = [];
   for (let k = 0; k < nbPos; ++k) {
     arrPos[k] = [maxx/2, maxy/2 + k*30 - 100];
@@ -228,7 +227,7 @@ function startOver() {
 
 function mouseClick (event) {
 
-  events.push({event:'click'});;
+  events.push({event:'click'});
 
 } // mouseMove
 
@@ -248,3 +247,4 @@ function mouseClick (event) {
   requestAnimationFrame (animate);
 
 }); // window load listener
+
