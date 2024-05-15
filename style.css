@@ -14,16 +14,21 @@ body {
     z-index: 1;
 }
 
-.slideRadius {
+.slideOuterRadius {
     position: absolute;
     z-index: 1;
 }
-.slideRo {
+.slideInnerRadius {
     top: 20px;
     position: absolute;
     z-index: 1;
 }
+.slideRo {
+    top: 40px;
+    position: absolute;
+    z-index: 1;
+}
 div {
-    width: 228px;
+    width: 270px;
     background-color: black;
 }

@@ -19,13 +19,17 @@
 Change constants at the beginning of JS code
 Click for new pattern
 -->
-    <div class="slideRadius" style="color: white">
-      <input type="range" min="3" value="10" max="15" class="slider" id="Radius" onchange="changeRadius()">
-      <label for="Radius" id="changeRad">Radius: 10</label>
+    <div class="slideOuterRadius" style="color: white">
+      <input type="range" min="4" value="10" max="15" class="slider" id="OuterRadius" onchange="changeOuterRadius()">
+      <label for="OuterRadius" id="changeOuterRad">Outer Radius: 10</label>
+    </div>
+    <div class="slideInnerRadius" style="color: white">
+      <input type="range" min="3" value="9" max="14" class="slider" id="InnerRadius" onchange="changeInnerRadius()">
+      <label for="InnerRadius" id="changeInnerRad">Inner Radius: 9</label>
     </div>
     <div class="slideRo" style="color: white">
       <input type="range" min="10" value="15" max="100" class="slider" id="Ro" onchange="changeRo()">
-      <label for="Radius" id="changeRo">Density: 15</label>
+      <label for="Ro" id="changeRo">Density: 15</label>
     </div>
     <canvas id="myCanvas" width="200" height="200"></canvas>
   </body>
