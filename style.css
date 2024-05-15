@@ -6,3 +6,24 @@ body {
     border-width:0;
     cursor: pointer;
   }
+
+#myCanvas {
+    position: absolute;
+    top: 52px;
+    left: 0;
+    z-index: 1;
+}
+
+.slideRadius {
+    position: absolute;
+    z-index: 1;
+}
+.slideRo {
+    top: 20px;
+    position: absolute;
+    z-index: 1;
+}
+div {
+    width: 228px;
+    background-color: black;
+}
