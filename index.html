@@ -14,7 +14,7 @@
 
     <title>Ring</title>
   </head>
-  <body>
+  <body onmousemove="coordinate(event)">
     <!-- 
 Change constants at the beginning of JS code
 Click for new pattern
@@ -32,7 +32,14 @@ Click for new pattern
       <label for="Ro" id="changeRo">Density: 15</label>
     </div>
     <canvas id="myCanvas" width="200" height="200"></canvas>
+    <div class="board">
+      <p class="xParagraph">x = <span id="x"></span></p>
+      <p class="eParagraph">E = <span id="e"></span></p>
+      <p class="phiParagraph">&#966; = <span id="phi"></span></p>
+    </div>
   </body>
   <script src="./index.js"></script>
   <script src="./Radius.js"></script>
+  <script src="./Calc.js"></script>
+
 </html>

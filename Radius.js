@@ -7,6 +7,7 @@ function changeOuterRadius() {
     document.getElementById("OuterRadius").innerHTML = outRad;
     document.getElementById("changeOuterRad").innerHTML = "Outer Radius: " +  outRad;
     drawRing(inRad * 5, outRad * 5);
+    changeE();
 }
 
 function changeInnerRadius() {
@@ -56,4 +57,3 @@ function drawRing(inner, radius) {
 }
 
 window.onload = drawRing(9 * 5, 10 * 5);
-
