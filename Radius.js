@@ -1,13 +1,29 @@
-function changeRadius() {
-    document.getElementById("changeRad").innerHTML = "Radius: " +  document.getElementById("Radius").value;
-    drawRing(document.getElementById("Radius").value * 5);
+function changeOuterRadius() {
+    let inRad = parseInt(document.getElementById("InnerRadius").value);
+    let outRad = parseInt(document.getElementById("OuterRadius").value);
+    if (inRad >= outRad) {
+        outRad = inRad + 1;
+    }
+    document.getElementById("OuterRadius").innerHTML = outRad;
+    document.getElementById("changeOuterRad").innerHTML = "Outer Radius: " +  outRad;
+    drawRing(inRad * 5, outRad * 5);
 }
 
+function changeInnerRadius() {
+    let inRad = parseInt(document.getElementById("InnerRadius").value);
+    let outRad = parseInt(document.getElementById("OuterRadius").value);
+    if (inRad >= outRad) {
+        inRad = outRad - 1;
+    }
+    document.getElementById("InnerRadius").innerHTML = inRad;
+    document.getElementById("changeInnerRad").innerHTML = "Inner Radius: " +  inRad;
+    drawRing(inRad * 5, outRad * 5);
+}
 function changeRo() {
     document.getElementById("changeRo").innerHTML = "Density: " +  document.getElementById("Ro").value;
 }
 
-function drawRing(radius) {
+function drawRing(inner, radius) {
     const canvas = document.getElementById("myCanvas");
     if (!canvas || !canvas.getContext) {
         console.error("Invalid element or browser does not support canvas.");
@@ -23,7 +39,7 @@ function drawRing(radius) {
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
-    const innerRadius = radius - 5; // Внутренний радиус кольца
+    const innerRadius = inner; // Внутренний радиус кольца
     const outerRadius = radius; // Внешний радиус кольца
 
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -39,4 +55,5 @@ function drawRing(radius) {
     context.fill();
 }
 
-window.onload = drawRing(10 * 5);
+window.onload = drawRing(9 * 5, 10 * 5);
+

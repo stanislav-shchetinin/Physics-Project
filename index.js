@@ -173,7 +173,7 @@ function createField() {
   let offsAng, nbPart, part;
   let color;
 
-  nbPos = document.getElementById("Radius").value; // количество точек
+  nbPos = document.getElementById("OuterRadius").value; // количество точек
   nbPart = document.getElementById("Ro").value; // интенсивность линий
   arrPos = [];
   for (let k = 0; k < nbPos; ++k) {
