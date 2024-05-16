@@ -180,7 +180,7 @@ window.addEventListener("load", function () {
 
     var centerX = canv.width / 2,
         centerY = canv.height / 2,
-        radius = 10+outRad*10,
+        radius = 30+outRad*10,
         width = 5,
         angles = []
     var angle;
@@ -210,6 +210,26 @@ window.addEventListener("load", function () {
         ctx.stroke();
       }
     }
+
+    //LEONID CREATE STICK
+//------------------------------------------------------------------------
+   function createLine(){
+     // create lines
+     for (let i = 0; i < nbPos; i++) {
+       let source = arrPos[i];
+       ctx.beginPath();
+       ctx.moveTo(source[0], source[1]);
+       for (let j = 0; j < nbPos; j++) {
+         if (i !== j) {
+          ctx.lineTo(arrPos[j][0], arrPos[j][1]);
+         }
+       }
+       ctx.strokeStyle = 'white';
+       ctx.lineWidth = 8;
+       ctx.stroke();
+     }
+  }
+    createLine()
   }
 
 
