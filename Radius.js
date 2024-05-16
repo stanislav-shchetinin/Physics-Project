@@ -47,7 +47,7 @@ function drawRing(inner, radius) {
 
     context.beginPath();
     context.arc(centerX, centerY, outerRadius, 0, 2 * Math.PI); // Внешний круг
-    context.fillStyle = "blue";
+    context.fillStyle = "white";
     context.fill();
 
     context.beginPath();
