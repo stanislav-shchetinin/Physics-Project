@@ -246,9 +246,17 @@ window.addEventListener("load", function () {
     nbPos = document.getElementById("OuterRadius").value; // количество точек
     nbPart = document.getElementById("Ro").value; // интенсивность линий
     arrPos = [];
-    for (let k = 0; k < nbPos; ++k) {
-      arrPos[k] = [maxx / 2, maxy / 2 + k * 30 - 100];
-    } // for k
+    if (nbPos % 2 == 0) {
+      let dif = (parseInt(nbPos) / 2) * 30 - 15;
+      for (let k = 0; k < nbPos; ++k) {
+        arrPos[k] = [maxx / 2, canv.height / 2 + k * 30 - dif];
+      } // for k
+    } else {
+      let dif = ((parseInt(nbPos)-1) / 2) * 30;
+      for (let k = 0; k < nbPos; ++k) {
+        arrPos[k] = [maxx / 2, canv.height / 2 + k * 30 - dif];
+      } // for k
+    }
 
     nbPos = arrPos.length;
 
